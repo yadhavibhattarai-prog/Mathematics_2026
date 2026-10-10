@@ -46,11 +46,6 @@ Sx
 \end{pmatrix}\\
 &=
 \begin{pmatrix}
-2(1)+0(2)\\
-0(1)+1(2)
-\end{pmatrix}\\
-&=
-\begin{pmatrix}
 2\\
 2
 \end{pmatrix}
@@ -63,8 +58,6 @@ $$
 \begin{aligned}
 RSx
 &=
-R(Sx)\\
-&=
 \begin{pmatrix}
 0 & -1\\
 1 & 0
@@ -72,11 +65,6 @@ R(Sx)\\
 \begin{pmatrix}
 2\\
 2
-\end{pmatrix}\\
-&=
-\begin{pmatrix}
-0(2)-1(2)\\
-1(2)+0(2)
 \end{pmatrix}\\
 &=
 \begin{pmatrix}
@@ -96,7 +84,7 @@ $$
 \end{pmatrix}}
 $$
 
-This means we first scale the vector and then rotate it \(90^\circ\) counterclockwise.
+We first scale the vector and then rotate it $90^\circ$ counterclockwise.
 
 ---
 
@@ -118,11 +106,6 @@ Rx
 \end{pmatrix}\\
 &=
 \begin{pmatrix}
-0(1)-1(2)\\
-1(1)+0(2)
-\end{pmatrix}\\
-&=
-\begin{pmatrix}
 -2\\
 1
 \end{pmatrix}
@@ -135,8 +118,6 @@ $$
 \begin{aligned}
 SRx
 &=
-S(Rx)\\
-&=
 \begin{pmatrix}
 2 & 0\\
 0 & 1
@@ -144,11 +125,6 @@ S(Rx)\\
 \begin{pmatrix}
 -2\\
 1
-\end{pmatrix}\\
-&=
-\begin{pmatrix}
-2(-2)+0(1)\\
-0(-2)+1(1)
 \end{pmatrix}\\
 &=
 \begin{pmatrix}
@@ -168,65 +144,14 @@ $$
 \end{pmatrix}}
 $$
 
-This means we first rotate the vector and then apply nonuniform scaling.
+We first rotate the vector and then apply nonuniform scaling.
 
 ---
 
 ### Step 3: Compare the Results
 
-We obtained:
-
 $$
 RSx=
-\begin{pmatrix}
--2\\
-2
-\end{pmatrix}
-$$
-
-and
-
-$$
-SRx=
-\begin{pmatrix}
--4\\
-1
-\end{pmatrix}
-$$
-
-Since
-
-$$
-\begin{pmatrix}
--2\\
-2
-\end{pmatrix}
-\neq
-\begin{pmatrix}
--4\\
-1
-\end{pmatrix},
-$$
-
-we conclude that
-
-$$
-\boxed{RSx\neq SRx}
-$$
-
-### Step 4: Geometric Explanation
-
-The order of transformations matters because **nonuniform scaling and rotation generally do not commute**.
-
-- **For $RSx$:** We first stretch the vector horizontally by a factor of $2$, changing $(1,2)$ into $(2,2)$. Then we rotate it \(90^\circ\) counterclockwise, obtaining $(-2,2)$.
-- **For $SRx$:** We first rotate $(1,2)$ into $(-2,1)$. Then we stretch it horizontally by a factor of $2$, obtaining $(-4,1)$.
-
-The results differ because the scaling operation doubles the horizontal coordinate. Rotating before scaling changes which coordinate is affected by that scaling.
-
-### Final Answer
-
-$$
-\boxed{RSx=
 \begin{pmatrix}
 -2\\
 2
@@ -236,11 +161,76 @@ SRx=
 \begin{pmatrix}
 -4\\
 1
-\end{pmatrix}}
+\end{pmatrix}
 $$
 
-Therefore, the order of transformations matters. Applying scaling and then rotation produces a different result from applying rotation and then scaling. This illustrates why matrix multiplication is generally **noncommutative**:
+Since the two vectors are different,
 
 $$
-\boxed{RS\neq SR}
+\boxed{RSx\neq SRx}
 $$
+
+### Step 4: Geometric Explanation
+
+- **For $RSx$:** We first stretch the vector horizontally by a factor of $2$, changing $(1,2)$ into $(2,2)$. Then we rotate it $90^\circ$ counterclockwise, obtaining $(-2,2)$.
+- **For $SRx$:** We first rotate $(1,2)$ into $(-2,1)$. Then we stretch it horizontally by a factor of $2$, obtaining $(-4,1)$.
+
+The order matters because nonuniform scaling changes the horizontal coordinate differently from the vertical coordinate. Rotating first changes which part of the vector is affected by the scaling.
+
+---
+
+### Step 5: Plot the Transformations
+
+The following Python code plots the original vector and the vectors obtained after each transformation.
+
+
+import matplotlib.pyplot as plt
+
+# Original vector
+x = (1, 2)
+
+# After scaling: Sx
+Sx = (2, 2)
+
+# After rotation: RSx
+RSx = (-2, 2)
+
+# After rotation: Rx
+Rx = (-2, 1)
+
+# After scaling: SRx
+SRx = (-4, 1)
+
+# Create the plot
+fig, ax = plt.subplots(figsize=(8, 8))
+
+vectors = [
+    (x, "Original vector x"),
+    (Sx, "Scaled vector Sx"),
+    (RSx, "RSx: Scale then rotate"),
+    (Rx, "Rotated vector Rx"),
+    (SRx, "SRx: Rotate then scale"),
+]
+
+for (vx, vy), label in vectors:
+    ax.quiver(
+        0, 0, vx, vy,
+        angles="xy",
+        scale_units="xy",
+        scale=1,
+        label=label
+    )
+
+# Coordinate axes and grid
+ax.axhline(0, linewidth=0.8)
+ax.axvline(0, linewidth=0.8)
+ax.set_xlim(-5, 3)
+ax.set_ylim(-1, 4)
+ax.set_aspect("equal", adjustable="box")
+ax.set_xlabel("x-coordinate")
+ax.set_ylabel("y-coordinate")
+ax.set_title("Composition of Scaling and Rotation")
+ax.grid(True)
+ax.legend(loc="best")
+
+plt.show()
