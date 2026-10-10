@@ -1,6 +1,8 @@
-### Exercise 14. Rotation Matrices
+# Exercise 14. Rotation Matrices and Angle Addition
 
-The matrix for a rotation through an angle $\theta$ is
+## Given
+
+The rotation matrix for an angle $\theta$ is
 
 $$
 R(\theta)=
@@ -10,17 +12,13 @@ R(\theta)=
 \end{pmatrix}
 $$
 
-We need to compute $R(\alpha)R(\beta)$ and show that
+We want to prove that
 
 $$
 R(\alpha)R(\beta)=R(\alpha+\beta)
 $$
 
-using the angle-sum formulas for sine and cosine.
-
-### Step 1: Write the Two Rotation Matrices
-
-For angles $\alpha$ and $\beta$, we have
+## Step 1: Write the two rotation matrices
 
 $$
 R(\alpha)=
@@ -30,8 +28,6 @@ R(\alpha)=
 \end{pmatrix}
 $$
 
-and
-
 $$
 R(\beta)=
 \begin{pmatrix}
@@ -40,49 +36,27 @@ R(\beta)=
 \end{pmatrix}
 $$
 
-### Step 2: Compute $R(\alpha)R(\beta)$
+## Step 2: Multiply the matrices
 
-Multiply the two matrices:
+Using the matrix multiplication formula
 
 $$
-R(\alpha)R(\beta)=
 \begin{pmatrix}
-\cos\alpha & -\sin\alpha\\
-\sin\alpha & \cos\alpha
+a & b\\
+c & d
 \end{pmatrix}
 \begin{pmatrix}
-\cos\beta & -\sin\beta\\
-\sin\beta & \cos\beta
+e & f\\
+g & h
+\end{pmatrix}
+=
+\begin{pmatrix}
+ae+bg & af+bh\\
+ce+dg & cf+dh
 \end{pmatrix}
 $$
 
-Using row-by-column multiplication, calculate each entry.
-
-**Top-left entry:**
-
-$$
-\cos\alpha\cos\beta-\sin\alpha\sin\beta
-$$
-
-**Top-right entry:**
-
-$$
--\cos\alpha\sin\beta-\sin\alpha\cos\beta
-$$
-
-**Bottom-left entry:**
-
-$$
-\sin\alpha\cos\beta+\cos\alpha\sin\beta
-$$
-
-**Bottom-right entry:**
-
-$$
--\sin\alpha\sin\beta+\cos\alpha\cos\beta
-$$
-
-Therefore,
+we obtain
 
 $$
 R(\alpha)R(\beta)=
@@ -93,82 +67,19 @@ R(\alpha)R(\beta)=
 \\
 \sin\alpha\cos\beta+\cos\alpha\sin\beta
 &
-\cos\alpha\cos\beta-\sin\alpha\sin\beta
+-\sin\alpha(-\sin\beta)+\cos\alpha\cos\beta
 \end{pmatrix}
 $$
 
-### Step 3: Apply the Angle-Sum Formulas
-
-Recall the angle-sum formulas:
-
-$$
-\cos(\alpha+\beta)
-=
-\cos\alpha\cos\beta-\sin\alpha\sin\beta
-$$
-
-and
-
-$$
-\sin(\alpha+\beta)
-=
-\sin\alpha\cos\beta+\cos\alpha\sin\beta
-$$
-
-Using these identities, we can rewrite the top-left entry as
-
-$$
-\cos\alpha\cos\beta-\sin\alpha\sin\beta
-=
-\cos(\alpha+\beta)
-$$
-
-The top-right entry becomes
-
-$$
-\begin{aligned}
-&-\cos\alpha\sin\beta-\sin\alpha\cos\beta\\
-&=-\left(\cos\alpha\sin\beta+\sin\alpha\cos\beta\right)\\
-&=-\sin(\alpha+\beta)
-\end{aligned}
-$$
-
-The bottom-left entry becomes
-
-$$
-\sin\alpha\cos\beta+\cos\alpha\sin\beta
-=
-\sin(\alpha+\beta)
-$$
-
-The bottom-right entry becomes
-
-$$
-\cos\alpha\cos\beta-\sin\alpha\sin\beta
-=
-\cos(\alpha+\beta)
-$$
-
-Substituting these expressions into the product gives
+Simplifying the bottom-right entry gives
 
 $$
 R(\alpha)R(\beta)=
 \begin{pmatrix}
-\cos(\alpha+\beta) & -\sin(\alpha+\beta)\\
-\sin(\alpha+\beta) & \cos(\alpha+\beta)
-\end{pmatrix}
-$$
-
-By the definition of a rotation matrix, this is exactly $R(\alpha+\beta)$.
-
-Therefore,
-
-$$
-\boxed{R(\alpha)R(\beta)=R(\alpha+\beta)}
-$$
-
-### Step 4: Geometric Explanation
-
-A rotation matrix turns a vector around the origin by a specified angle.
-
-When we multiply $R(\alpha)R(\beta)$, the transformation on the right is applied
+\cos\alpha\cos\beta-\sin\alpha\sin\beta
+&
+-(\cos\alpha\sin\beta+\sin\alpha\cos\beta)
+\\
+\sin\alpha\cos\beta+\cos\alpha\sin\beta
+&
+\cos\alpha\cos\
