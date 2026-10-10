@@ -230,4 +230,5 @@ for i, (B, title) in enumerate(matrices):
     axes[i, 0].set_ylabel(title)
 
 plt.tight_layout()
+plt.savefig("exercise11_plot.png", dpi=300, bbox_inches="tight")
 plt.show()
