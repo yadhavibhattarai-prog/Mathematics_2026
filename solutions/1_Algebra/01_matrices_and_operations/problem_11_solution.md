@@ -232,3 +232,4 @@ for i, (B, title) in enumerate(matrices):
 plt.tight_layout()
 plt.savefig("exercise11_plot.png", dpi=300, bbox_inches="tight")
 plt.show()
+```
