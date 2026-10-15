@@ -1,4 +1,4 @@
-### Exercise 11. When Do Matrices Commute?
+### . When Do Matrices Commute?
 
 Given:
 
