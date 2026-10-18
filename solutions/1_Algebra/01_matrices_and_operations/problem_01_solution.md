@@ -1,26 +1,4 @@
-
-
 ### Exercise 1. Matrix Size and Entries
-
-
-$$
-A=
-\begin{pmatrix}
-2 & -1 & 3 \\
-0 & 4 & 5 \\
-\end{pmatrix},\qquad B=
-\begin{pmatrix}
-1 & 0 \\
--2 & 3 \\
-4 & 1 \\
-\end{pmatrix}.
-$$
-
-1. State the sizes of matrices $A$ and $B$.
-2. Read off the entries $a_{12}$, $a_{23}$, $b_{21}$, and $b_{32}$.
-3. Write the second row of $A$ and the first column of $B$ as vectors.
-
-> **Why this exercise:** builds basic fluency with matrix notation, indices, rows, and columns.
 
 Given:
 
