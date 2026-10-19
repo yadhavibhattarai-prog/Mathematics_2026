@@ -1,5 +1,23 @@
+## Exercise 7. Identity Matrix, Zero Matrix, and Powers
+For
 
-# Exercise 7: Identity Matrix, Zero Matrix, and Powers
+$$
+A=
+\begin{pmatrix}
+2 & 1 \\
+0 & 2 \\
+\end{pmatrix}
+$$
+
+compute
+
+$$
+AI,\qquad IA,\qquad A+0,\qquad A^2,\qquad A^3.
+$$
+
+Explain the roles of the matrices $I$ and $0$, and describe the pattern you observe in successive powers of $A$.
+
+> **Why this exercise:** organizes the roles of neutral elements and reveals regularity in successive powers of a matrix.
 
 Given:
 
@@ -17,7 +35,7 @@ $$
 AI,\qquad IA,\qquad A+0,\qquad A^2,\qquad A^3
 $$
 
-## 1. Compute \(AI\)
+### 1. Compute \(AI\)
 
 The identity matrix of size \(2\times2\) is:
 
@@ -66,7 +84,7 @@ AI=
 }
 $$
 
-## 2. Compute \(IA\)
+### 2. Compute \(IA\)
 
 Using the same identity matrix:
 
@@ -107,7 +125,7 @@ $$
 
 Thus, multiplying \(A\) by the identity matrix on either side leaves \(A\) unchanged.
 
-## 3. Compute \(A+0\)
+### 3. Compute \(A+0\)
 
 The zero matrix of size \(2\times2\) is:
 
@@ -157,7 +175,7 @@ A+0=
 }
 $$
 
-## 4. Compute \(A^2\)
+### 4. Compute \(A^2\)
 
 The power \(A^2\) means multiplying \(A\) by itself.
 
@@ -217,7 +235,7 @@ A^2=
 }
 $$
 
-## 5. Compute \(A^3\)
+### 5. Compute \(A^3\)
 
 The power \(A^3\) means multiplying \(A^2\) by \(A\).
 
