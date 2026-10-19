@@ -1,35 +1,21 @@
 
 # Exercise 3: When Can Matrices Be Multiplied?
-### Exercise 3. Swapping Two Rows
-For
-
-$$
-A=
-\begin{pmatrix}
-1 & 2 & 0 \\
-0 & 3 & 1 \\
-2 & 1 & 1 \\
-\end{pmatrix}
-$$
-
-compute $\det A$. Then form a matrix $B$ by swapping the first and second rows of $A$.
-
-First predict $\det B$ using a determinant property, and then verify your prediction by calculation.
-
-> **Why this exercise:** gives a second classical calculation with a $3\times3$ determinant while teaching the precise effect of a row swap on the sign of the determinant.
-
-Given the matrix sizes:
+The matrix sizes are
 
 $$
 A_{2\times3},\qquad B_{3\times4},\qquad
 C_{4\times2},\qquad D_{2\times2}
 $$
 
-We need to determine whether the following products are defined:
+For the products
 
 $$
 AB,\quad BA,\quad BC,\quad CB,\quad AC,\quad CA,\quad AD,\quad DA
 $$
+
+determine whether each product is defined. If it is, state the size of the result. Justify each decision using the dimension compatibility condition.
+
+> **Why this exercise:** forces an understanding of dimension compatibility before carrying out any calculation.
 
 ## Dimension Compatibility Condition
 
@@ -191,17 +177,20 @@ $$
 
 ## Final Answers
 
-| Product | Dimension check | Defined? | Result size |
-|---|---|---|---|
-| \(AB\) | \(3=3\) | Yes | \(2\times4\) |
-| \(BA\) | \(4\neq2\) | No | — |
-| \(BC\) | \(4=4\) | Yes | \(3\times2\) |
-| \(CB\) | \(2\neq3\) | No | — |
-| \(AC\) | \(3\neq4\) | No | — |
-| \(CA\) | \(2=2\) | Yes | \(4\times3\) |
-| \(AD\) | \(3\neq2\) | No | — |
-| \(DA\) | \(2=2\) | Yes | \(2\times3\) |
+A matrix product is defined when the number of columns in the first matrix equals the number of rows in the second matrix. The result uses the outer dimensions.
 
+| Product | Dimension check | Defined? | Result size |
+|---|---:|:---:|:---:|
+| $AB$ | $3=3$ | Yes | $2\times4$ |
+| $BA$ | $4\neq2$ | No | — |
+| $BC$ | $4=4$ | Yes | $3\times2$ |
+| $CB$ | $2\neq3$ | No | — |
+| $AC$ | $3\neq4$ | No | — |
+| $CA$ | $2=2$ | Yes | $4\times3$ |
+| $AD$ | $3\neq2$ | No | — |
+| $DA$ | $2=2$ | Yes | $2\times3$ |
+
+Therefore, $AB$, $BC$, $CA$, and $DA$ are defined; the other products are not.
 ## Conclusion
 
 Matrix multiplication is defined only when the number of columns in the first matrix equals the number of rows in the second matrix. The dimensions of the resulting matrix are determined by the outside dimensions.
