@@ -1,6 +1,6 @@
 ### Exercise 4. Matrix Multiplication and Noncommutativity
 
-Given:
+For
 
 $$
 A=
@@ -15,6 +15,17 @@ B=
 3 & 1
 \end{pmatrix}
 $$
+
+**Tasks:**
+1. Compute both products, $AB$ and $BA$.
+2. Compare the results.
+3. Explain what the results show about the noncommutativity of matrix multiplication.
+
+> **Why this exercise:** Shows one of the most important differences between matrix multiplication and multiplication of numbers.
+
+---
+
+### Solution
 
 **Step 1: Calculate $AB$**
 
@@ -88,19 +99,17 @@ BA=
 }
 $$
 
-**Step 3: Compare $AB$ and $BA$**
+**Step 3: Compare the results**
 
-We have:
+We have
 
 $$
 AB=
 \begin{pmatrix}
 8 & 2 \\
 3 & 1
-\end{pmatrix}
-$$
-
-$$
+\end{pmatrix},
+\qquad
 BA=
 \begin{pmatrix}
 2 & 4 \\
@@ -116,8 +125,8 @@ $$
 
 **Conclusion: Noncommutativity of Matrix Multiplication**
 
-Noncommutativity means that changing the order of multiplication can produce a different result. In this example, $AB$ is not equal to $BA$.
+Noncommutativity means that changing the order of multiplication can produce a different result. In this example, $AB\neq BA$.
 
 Unlike ordinary multiplication of numbers, where $2\times3=3\times2$, matrix multiplication generally does not satisfy the commutative property.
 
-Therefore, **matrix multiplication is generally noncommutative**, meaning that $AB\neq BA$ in many cases.
+Therefore, **matrix multiplication is generally noncommutative.**
