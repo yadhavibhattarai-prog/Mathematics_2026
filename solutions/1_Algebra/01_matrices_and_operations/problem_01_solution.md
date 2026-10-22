@@ -1,4 +1,4 @@
-### Exercise 1. Matrix Size and Entries
+## Exercise 1. Matrix Size and Entries
 Given
 
 $$
@@ -20,9 +20,9 @@ $$
 
 > **Why this exercise:** builds basic fluency with matrix notation, indices, rows, and columns.
 
-## 1. State the sizes of matrices \(A\) and \(B\).
+### 1. State the sizes of matrices \(A\) and \(B\).
 
-## Solution
+#### Solution
 
 Given
 
@@ -81,4 +81,5 @@ $$
 
 1. $A$ is $2\times3$ and $B$ is $3\times2$.
 2. $a_{12}=-1$, $a_{23}=5$, $b_{21}=-2$, and $b_{32}=1$.
-3. Second row of $A$: $\begin{pmatrix}0 & 4 & 5\end{pmatrix}$; first column of $B$: $\begin{pmatrix}1 & -2 & 4\end{pmatrix}$.
+3. Second row of $A$: $\begin{pmatrix}0 & 4 & 5\end{pmatrix}$; 
+   first column of $B$: $\begin{pmatrix}1 & -2 & 4\end{pmatrix}$.
