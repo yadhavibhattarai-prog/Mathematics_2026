@@ -17,65 +17,65 @@ Which matrix is invertible? Justify your answer.
 
 > **Why this exercise:** introduces the simplest determinant calculation and immediately connects it with invertibility.
 
-### Solution to Exercise 1: Determinant of a 2×2 Matrix
+## Solution
 
-For a 2×2 matrix
+### 1. Determinant of a $2\times 2$ Matrix
+
+For a general $2\times 2$ matrix
+
 $$
+M=
 \begin{pmatrix}
 a & b \\
-c & d
-\end{pmatrix},
-$$
-the determinant is
-$$
-\det = ad - bc.
+c & d \\
+\end{pmatrix}
 $$
 
-#### 1) First matrix
+the determinant is defined by the formula
+
+$$
+\det M = ad - bc
+$$
+
+### 2. Computation for the Given Matrices
+
+For the first matrix:
+
 $$
 A=
 \begin{pmatrix}
 3 & -2 \\
-5 & 4
+5 & 4 \\
 \end{pmatrix}
 $$
 
-So,
+Evaluating the determinant gives
+
 $$
-\det(A)=3\cdot 4-(-2)\cdot 5=12+10=22.
+\det A = 3\cdot 4 - (-2)\cdot 5 = 12 - (-10) = 12 + 10 = 22
 $$
 
-#### 2) Second matrix
+For the second matrix:
+
 $$
 B=
 \begin{pmatrix}
 1 & 7 \\
-2 & 14
+2 & 14 \\
 \end{pmatrix}
 $$
 
-So,
+Evaluating the determinant gives
+
 $$
-\det(B)=1\cdot 14-7\cdot 2=14-14=0.
+\det B = 1\cdot 14 - 7\cdot 2 = 14 - 14 = 0
 $$
 
-#### Which matrix is invertible?
-A matrix is invertible if and only if its determinant is nonzero.
+### 3. Invertibility
 
-- $\det(A)=22 \neq 0$, so matrix $A$ is invertible.
-- $\det(B)=0$, so matrix $B$ is not invertible.
+A square matrix is invertible if and only if its determinant is nonzero ($\det M \neq 0$).
 
-Therefore, the matrix
-$$
-\begin{pmatrix}
-3 & -2 \\
-5 & 4
-\end{pmatrix}
-$$
-is invertible, while
-$$
-\begin{pmatrix}
-1 & 7 \\
-2 & 14
-\end{pmatrix}
-$$
+- For matrix $A$: $\det A = 22 \neq 0$, so $A$ is invertible.
+- For matrix $B$: $\det B = 0$, so $B$ is not invertible.
+
+The noninvertibility of $B$ can also be seen from its rows: the second row is twice the first row ($R_2 = 2R_1$), which means the rows are linearly dependent.
