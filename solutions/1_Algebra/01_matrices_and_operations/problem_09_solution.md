@@ -1,4 +1,5 @@
 
+
 ## Exercise 9. Composing Transformations
 Let
 
@@ -14,17 +15,20 @@ S=
 \end{pmatrix}.
 $$
 
-By the end of this chapter, you should be able to:
+The matrix $S$ describes nonuniform scaling, while $R$ describes a $90^\circ$ counterclockwise rotation.
+For
 
-- interpret a matrix product as a sequence of transformations;
-- determine the order in which transformations are applied;
-- calculate two different compositions of scaling and rotation; and
-- explain why changing the order can change the result.
+$$
+x=
+\begin{pmatrix}
+1 \\
+2 \\
+\end{pmatrix}
+$$
 
 compute $RSx$ and $SRx$. Compare the results and explain geometrically why the order of these transformations matters.
 
-A matrix represents a linear transformation of vectors. If $A$ and $B$ are
-matrices and $x$ is a vector, then
+> **Why this exercise:** interprets matrix multiplication as composition of transformations.
 
 ## Solution
 
