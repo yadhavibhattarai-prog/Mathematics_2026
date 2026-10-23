@@ -1,6 +1,18 @@
-# Chapter 9: Composing Linear Transformations
 
-## 1. Learning goals
+## Exercise 9. Composing Transformations
+Let
+
+$$
+S=
+\begin{pmatrix}
+2 & 0 \\
+0 & 1 \\
+\end{pmatrix},\qquad R=
+\begin{pmatrix}
+0 & -1 \\
+1 & 0 \\
+\end{pmatrix}.
+$$
 
 By the end of this chapter, you should be able to:
 
@@ -9,216 +21,283 @@ By the end of this chapter, you should be able to:
 - calculate two different compositions of scaling and rotation; and
 - explain why changing the order can change the result.
 
-## 2. The order in a matrix product
+compute $RSx$ and $SRx$. Compare the results and explain geometrically why the order of these transformations matters.
 
 A matrix represents a linear transformation of vectors. If $A$ and $B$ are
 matrices and $x$ is a vector, then
 
-$$
-ABx=A(Bx).
-$$
+## Solution
 
-This means that $B$ acts on $x$ first, followed by $A$. Read a product of
-matrices from right to left when determining the order of transformations.
+### 1. Order of Transformations in a Matrix Product
 
-In general, matrix multiplication is not commutative: $AB$ and $BA$ need not be
-equal. The following example shows how the order of a rotation and a
-nonuniform scaling changes a vector.
-
-## 3. Transformations in this example
-
-Consider the scaling matrix
+A matrix represents a linear transformation of vectors. When applying a sequence of transformations to a vector $x$, the order of application is evaluated from right to left:
 
 $$
-S=
+ABx = A(Bx)
+$$
+
+The rightmost matrix $B$ acts on $x$ first, and the matrix $A$ then acts on the resulting vector $Bx$.
+
+In general, matrix multiplication is non-commutative ($AB \neq BA$). The following steps evaluate $RSx$ (scale, then rotate) and $SRx$ (rotate, then scale) for the given matrices and vector.
+
+### 2. Computation of $RSx$ (Scale First, Then Rotate)
+
+First, apply the scaling transformation $S$ to $x$:
+
+$$
+\begin{aligned}
+Sx &=
 \begin{pmatrix}
-2 & 0\\
-0 & 1
-\end{pmatrix}
-$$
-
-and the $90^\circ$ counterclockwise rotation matrix
-
-$$
-R=
-\begin{pmatrix}
-0 & -1\\
-1 & 0
-\end{pmatrix}.
-$$
-
-The scaling matrix doubles the horizontal coordinate and leaves the vertical
-coordinate unchanged. Let the original vector be
-
-$$
-x=
-\begin{pmatrix}
-1\\
-2
-\end{pmatrix}.
-$$
-
-We will compare $RSx$ (scale, then rotate) with $SRx$ (rotate, then scale).
-
-## 4. Scale first, then rotate: $RSx$
-
-The rightmost matrix, $S$, acts first:
-
-$$
-Sx=
-\begin{pmatrix}
-2 & 0\\
-0 & 1
+2 & 0 \\
+0 & 1 \\
 \end{pmatrix}
 \begin{pmatrix}
-1\\
-2
+1 \\
+2 \\
+\end{pmatrix} \\
+&=
+\begin{pmatrix}
+2\cdot 1 + 0\cdot 2 \\
+0\cdot 1 + 1\cdot 2 \\
+\end{pmatrix} \\
+&=
+\begin{pmatrix}
+2 \\
+2 \\
 \end{pmatrix}
-=
-\begin{pmatrix}
-2\\
-2
-\end{pmatrix}.
+\end{aligned}
 $$
 
-Now apply the rotation $R$:
+Next, apply the rotation transformation $R$ to the result $Sx$:
 
 $$
-RSx=
+\begin{aligned}
+RSx &=
 \begin{pmatrix}
-0 & -1\\
-1 & 0
-\end{pmatrix}
-\begin{pmatrix}
-2\\
-2
-\end{pmatrix}
-=
-\begin{pmatrix}
--2\\
-2
-\end{pmatrix}.
-$$
-
-Thus, scaling first and rotating second gives
-
-$$
-\boxed{RSx=
-\begin{pmatrix}
--2\\
-2
-\end{pmatrix}}.
-$$
-
-## 5. Rotate first, then scale: $SRx$
-
-This time, the rightmost matrix, $R$, acts first:
-
-$$
-Rx=
-\begin{pmatrix}
-0 & -1\\
-1 & 0
+0 & -1 \\
+1 & 0 \\
 \end{pmatrix}
 \begin{pmatrix}
-1\\
-2
+2 \\
+2 \\
+\end{pmatrix} \\
+&=
+\begin{pmatrix}
+0\cdot 2 + (-1)\cdot 2 \\
+1\cdot 2 + 0\cdot 2 \\
+\end{pmatrix} \\
+&=
+\begin{pmatrix}
+-2 \\
+2 \\
 \end{pmatrix}
-=
-\begin{pmatrix}
--2\\
-1
-\end{pmatrix}.
+\end{aligned}
 $$
 
-Now apply the scaling $S$:
+Alternatively, computing the composite transformation matrix $RS$:
 
 $$
-SRx=
+\begin{aligned}
+RS &=
 \begin{pmatrix}
-2 & 0\\
-0 & 1
+0 & -1 \\
+1 & 0 \\
 \end{pmatrix}
 \begin{pmatrix}
--2\\
-1
+2 & 0 \\
+0 & 1 \\
+\end{pmatrix} \\
+&=
+\begin{pmatrix}
+0 & -1 \\
+2 & 0 \\
 \end{pmatrix}
-=
+\end{aligned}
+$$
+
+Then multiplying by $x$:
+
+$$
+\begin{aligned}
+RSx &=
 \begin{pmatrix}
--4\\
-1
-\end{pmatrix}.
-$$
-
-Therefore, rotating first and scaling second gives
-
-$$
-\boxed{SRx=
+0 & -1 \\
+2 & 0 \\
+\end{pmatrix}
 \begin{pmatrix}
--4\\
-1
-\end{pmatrix}}.
-$$
-
-## 6. Compare the compositions
-
-The two results are different:
-
-$$
-RSx=
+1 \\
+2 \\
+\end{pmatrix} \\
+&=
 \begin{pmatrix}
--2\\
-2
+-2 \\
+2 \\
+\end{pmatrix}
+\end{aligned}
+$$
+
+### 3. Computation of $SRx$ (Rotate First, Then Scale)
+
+First, apply the rotation transformation $R$ to $x$:
+
+$$
+\begin{aligned}
+Rx &=
+\begin{pmatrix}
+0 & -1 \\
+1 & 0 \\
+\end{pmatrix}
+\begin{pmatrix}
+1 \\
+2 \\
+\end{pmatrix} \\
+&=
+\begin{pmatrix}
+0\cdot 1 + (-1)\cdot 2 \\
+1\cdot 1 + 0\cdot 2 \\
+\end{pmatrix} \\
+&=
+\begin{pmatrix}
+-2 \\
+1 \\
+\end{pmatrix}
+\end{aligned}
+$$
+
+Next, apply the scaling transformation $S$ to the result $Rx$:
+
+$$
+\begin{aligned}
+SRx &=
+\begin{pmatrix}
+2 & 0 \\
+0 & 1 \\
+\end{pmatrix}
+\begin{pmatrix}
+-2 \\
+1 \\
+\end{pmatrix} \\
+&=
+\begin{pmatrix}
+2\cdot (-2) + 0\cdot 1 \\
+0\cdot (-2) + 1\cdot 1 \\
+\end{pmatrix} \\
+&=
+\begin{pmatrix}
+-4 \\
+1 \\
+\end{pmatrix}
+\end{aligned}
+$$
+
+Alternatively, computing the composite transformation matrix $SR$:
+
+$$
+\begin{aligned}
+SR &=
+\begin{pmatrix}
+2 & 0 \\
+0 & 1 \\
+\end{pmatrix}
+\begin{pmatrix}
+0 & -1 \\
+1 & 0 \\
+\end{pmatrix} \\
+&=
+\begin{pmatrix}
+0 & -2 \\
+1 & 0 \\
+\end{pmatrix}
+\end{aligned}
+$$
+
+Then multiplying by $x$:
+
+$$
+\begin{aligned}
+SRx &=
+\begin{pmatrix}
+0 & -2 \\
+1 & 0 \\
+\end{pmatrix}
+\begin{pmatrix}
+1 \\
+2 \\
+\end{pmatrix} \\
+&=
+\begin{pmatrix}
+-4 \\
+1 \\
+\end{pmatrix}
+\end{aligned}
+$$
+
+### 4. Comparison of the Results
+
+Comparing the resulting vectors:
+
+$$
+RSx =
+\begin{pmatrix}
+-2 \\
+2 \\
 \end{pmatrix},
 \qquad
-SRx=
+SRx =
 \begin{pmatrix}
--4\\
-1
-\end{pmatrix}.
+-4 \\
+1 \\
+\end{pmatrix}
 $$
 
-Hence, for this vector,
+Clearly:
 
 $$
-\boxed{RSx\ne SRx}.
+RSx \neq SRx
 $$
 
-The matrices themselves also differ:
+Comparing the transformation matrices directly:
 
 $$
-RS=
+RS =
 \begin{pmatrix}
-0 & -1\\
-2 & 0
+0 & -1 \\
+2 & 0 \\
 \end{pmatrix},
 \qquad
-SR=
+SR =
 \begin{pmatrix}
-0 & -2\\
-1 & 0
-\end{pmatrix}.
+0 & -2 \\
+1 & 0 \\
+\end{pmatrix}
 $$
 
-Thus $RS\ne SR$: these transformations do not commute. Checking the matrices
-shows that the transformations differ in general, not just for the particular
-vector $x$ used in the example.
+Since $RS \neq SR$, the transformations do not commute. This inequality holds in general, not only for the specific vector $x$.
 
-## 7. Geometric interpretation
+### 5. Geometric Explanation of Why the Order Matters
 
-- **Scale, then rotate:** $x=(1,2)$ becomes $(2,2)$ after scaling, then
-  $(-2,2)$ after the counterclockwise rotation.
-- **Rotate, then scale:** $x=(1,2)$ becomes $(-2,1)$ after rotation, then
-  $(-4,1)$ after scaling.
+The difference in outcomes arises from how nonuniform scaling interacts with direction:
 
-The scaling treats horizontal and vertical coordinates differently. Rotating
-the vector first changes which coordinates are horizontal and vertical before
-the scaling is applied. That is why the order matters.
+1. **Nonuniform scaling depends on the axes:**
+   The matrix $S$ scales the horizontal ($x_1$) component by a factor of $2$, while leaving the vertical ($x_2$) component unchanged ($1\times$).
 
-## 8. Visualize the transformations with Python
+2. **Rotation swaps and reflects the axes:**
+   A $90^\circ$ counterclockwise rotation sends the horizontal axis to the vertical axis and the vertical axis to the negative horizontal axis:
+   $(x_1, x_2) \mapsto (-x_2, x_1)$.
 
-This program calculates the intermediate vectors and plots each one from the
-origin. It also prints the two final results.
+3. **Comparing the two sequences:**
+   - **Scale, then rotate ($RSx$):**
+     The vector $(1, 2)$ has its horizontal coordinate doubled first, becoming $(2, 2)$.
+     Rotating by $90^\circ$ then turns this into $(-2, 2)$. The stretched coordinate ends up in the vertical position.
+   - **Rotate, then scale ($SRx$):**
+     The vector $(1, 2)$ is rotated first, becoming $(-2, 1)$.
+     Now the original vertical component ($2$) has rotated into the horizontal position (as $-2$). Applying the nonuniform scaling doubles this new horizontal coordinate to $-4$, while leaving the vertical coordinate $1$ unchanged, yielding $(-4, 1)$.
+
+Because rotation interchanges which coordinates align with the axes of scaling, scaling *before* versus *after* rotation stretches different components of the original vector. Thus, the order of application changes the geometric result.
+
+### 6. Visualization with Python
+
+The following Python script computes the intermediate vectors and plots each stage of the transformations:
 
 ```python
 import matplotlib.pyplot as plt
@@ -267,26 +346,14 @@ ax.set_title("Order of Scaling and Rotation")
 ax.grid(True)
 ax.legend(loc="best")
 
-print("RSx (scale, then rotate):", scale_then_rotate)
-print("SRx (rotate, then scale):", rotate_then_scale)
-
 output_path = (
     "solutions/1_Algebra/01_matrices_and_operations/"
     "problem_09_transformations.png"
 )
 plt.savefig(output_path, dpi=180, bbox_inches="tight")
-print(f"Plot saved to {output_path}")
-
-plt.show()
+plt.close()
 ```
 
-## 9. Key takeaway
-
-For a product $ABx$, apply $B$ first and then $A$. Since changing the order of
-transformations can change the result, always read matrix compositions from
-right to left and check whether the matrices commute before swapping their
-order.
-
-## 10. Plot from section 8
+### 7. Graphical Output
 
 ![Plot of the original vector and the results of applying scaling and rotation in different orders](problem_09_transformations.png)
