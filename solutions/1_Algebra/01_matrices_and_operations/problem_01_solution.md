@@ -20,11 +20,11 @@ $$
 
 > **Why this exercise:** builds basic fluency with matrix notation, indices, rows, and columns.
 
-### 1. State the sizes of matrices \(A\) and \(B\).
+ 
 
-#### Solution
+### Solution
 
-Given
+Given,
 
 $$
 A=
