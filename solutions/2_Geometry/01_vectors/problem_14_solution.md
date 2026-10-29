@@ -1,6 +1,6 @@
-## Question
+# Exercise 14. Closest Point on a Line
 
-For $P=(4,1)$ and the line through the origin in direction $v=(1,2)$, find the closest point and distance using projection, and verify the relevant perpendicularity.
+Given $P=(4,1)$ and a line through the origin with direction $v=(1,2)$, use projection to find the closest point on the line and the distance from $P$ to the line. Verify that the appropriate vector is perpendicular to the line direction.
 
 ## Solution
 

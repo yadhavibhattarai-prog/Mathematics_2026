@@ -1,6 +1,6 @@
-## Question
+# Exercise 15. Comparing Directions Using the Cosine of the Angle
 
-For $a=(1,2,1)$, $b=(2,4,2)$, and $c=(2,0,3)$, compute the cosine for every pair, order the pairwise angles, and explain the value for $a,b$.
+Given $a=(1,2,1)$, $b=(2,4,2)$, and $c=(2,0,3)$, compute $\frac{u\cdot v}{\|u\|\,\|v\|}$ for each pair. Order the pairs by increasing angle. Explain why the value for $a,b$ is $1$ even though the vectors have different lengths.
 
 ## Solution
 

@@ -1,6 +1,6 @@
-## Question
+# Exercise 10. Triangle Area from Vectors
 
-For $A=(0,0,0)$, $B=(2,1,0)$, $C=(1,3,2)$, use a cross product to find the parallelogram and triangle areas and explain the factor $1/2$.
+For $A=(0,0,0)$, $B=(2,1,0)$, and $C=(1,3,2)$, construct $\overrightarrow{AB}$ and $\overrightarrow{AC}$. Use their cross product to compute the parallelogram area and the triangle area, and explain the factor $\frac12$.
 
 ## Solution
 

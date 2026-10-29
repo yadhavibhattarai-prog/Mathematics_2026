@@ -1,6 +1,6 @@
-## Question
+# Exercise 12. A Normal Vector to a Plane
 
-For $A=(1,0,2)$, $B=(2,1,0)$, and $C=(0,3,1)$, construct two in-plane vectors, find a vector perpendicular to both, and check it with dot products.
+Given $A=(1,0,2)$, $B=(2,1,0)$, and $C=(0,3,1)$, construct two vectors lying in the plane. Find a vector perpendicular to both and check perpendicularity using dot products.
 
 ## Solution
 

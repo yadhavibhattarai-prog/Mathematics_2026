@@ -1,6 +1,6 @@
-## Question
+# Exercise 6. Projection and Perpendicular Component
 
-Project $u=(4,2)$ onto $v=(1,1)$, compute the residual $r$, verify $r\cdot v=0$, and explain the result geometrically.
+Find the projection of $u=(4,2)$ onto the direction $v=(1,1)$. Then compute $r=u-\mathrm{proj}_v\,u$, verify that $r\cdot v=0$, and explain the result geometrically.
 
 ## Solution
 

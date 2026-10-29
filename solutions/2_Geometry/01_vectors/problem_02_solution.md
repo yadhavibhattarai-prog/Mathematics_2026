@@ -1,6 +1,6 @@
-## Question
+# Exercise 2. Distance as the Length of a Vector
 
-For $A=(1,2,3)$ and $B=(4,-2,6)$, construct $\overrightarrow{AB}$, compute its length and the point distance, and explain why the results agree.
+For $A=(1,2,3)$ and $B=(4,-2,6)$: (1) construct $\overrightarrow{AB}$; (2) compute its length; (3) compute the distance using the coordinate formula; and (4) explain why both calculations give the same result.
 
 ## Solution
 

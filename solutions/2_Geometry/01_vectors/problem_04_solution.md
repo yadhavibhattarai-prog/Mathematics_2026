@@ -1,6 +1,6 @@
-## Question
+# Exercise 4. Dot Product and Perpendicularity
 
-For $u=(1,2,-1)$ and $v=(2,-1,3)$, test perpendicularity. Find $a$ such that $w=(2,-1,a)$ is perpendicular to $u$ and check it.
+For $u=(1,2,-1)$ and $v=(2,-1,3)$, compute $u\cdot v$ and determine whether they are perpendicular. Then find $a$ so that $w=(2,-1,a)$ is perpendicular to $u$, and check the result.
 
 ## Solution
 

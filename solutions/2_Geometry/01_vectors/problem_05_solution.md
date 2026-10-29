@@ -1,6 +1,6 @@
-## Question
+# Exercise 5. Angle Between Vectors
 
-For $u=(1,1,0)$ and $v=(1,0,1)$, predict the angle type from the dot product, compute the angle, and compare.
+Given $u=(1,1,0)$ and $v=(1,0,1)$: (1) use the sign of $u\cdot v$ to predict the type of angle; (2) compute the angle; and (3) compare the result with your prediction.
 
 ## Solution
 

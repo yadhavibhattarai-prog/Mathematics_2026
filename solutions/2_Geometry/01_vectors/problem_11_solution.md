@@ -1,6 +1,6 @@
-## Question
+# Exercise 11. Decomposition into Parallel and Perpendicular Components
 
-Decompose $u=(3,4)$ into components parallel and perpendicular to $v=(1,2)$, perform both requested checks, and explain why they are independent.
+Decompose $u=(3,4)$ into components parallel and perpendicular to $v=(1,2)$. Check that $u=u_{\parallel}+u_{\perp}$ and $u_{\perp}\cdot v=0$. Explain why these are two independent checks of correctness.
 
 ## Solution
 

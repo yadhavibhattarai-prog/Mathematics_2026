@@ -1,6 +1,6 @@
-## Question
+# Exercise 8. Linear Combination and Checking the Result
 
-Determine whether $w=(5,1)$ is $au+bv$ for $u=(1,1)$ and $v=(2,-1)$; find and check the coefficients and explain their geometric meaning.
+Check whether $w=(5,1)$ can be written as $w=au+bv$, where $u=(1,1)$ and $v=(2,-1)$. If so, find $a,b$, reconstruct $w$ from them, and explain the geometric meaning of the coefficients.
 
 ## Solution
 

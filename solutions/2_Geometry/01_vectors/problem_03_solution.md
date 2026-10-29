@@ -1,6 +1,6 @@
-## Question
+# Exercise 3. Vector Normalization
 
-Normalize $v=(3,4)$, check the unit length, reconstruct $v$, and explain what normalization changes.
+For $v=(3,4)$, find a unit vector $e$ with the same direction and orientation. Check that $\|e\|=1$, reconstruct $v$ as $v=\|v\|e$, and explain what changes during normalization and what remains unchanged.
 
 ## Solution
 
