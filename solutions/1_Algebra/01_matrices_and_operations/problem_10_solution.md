@@ -1,6 +1,6 @@
 ### Exercise 10. Columns of a Matrix Product
 
-Given:
+Given
 
 $$
 A=
@@ -14,12 +14,18 @@ B=
 1 & 2\\
 -1 & 0\\
 3 & 1
-\end{pmatrix}
+\end{pmatrix}.
 $$
 
-Denote the columns of $B$ by $b_1$ and $b_2$.
+Denote the columns of $B$ by $b_1,b_2$.
 
-Therefore,
+1. Compute $Ab_1$ and $Ab_2$.
+2. Compute the matrix $AB$.
+3. Compare the results and explain why the columns of $AB$ are exactly the vectors $Ab_1$ and $Ab_2$.
+
+## Worked Solution
+
+The columns of $B$ are
 
 $$
 b_1=
@@ -224,4 +230,4 @@ $$
 \boxed{AB=\begin{pmatrix}Ab_1 & Ab_2 & \cdots & Ab_n\end{pmatrix}}
 $$
 
-This means we can compute a matrix product by multiplying $A$ by each column of $B$ and
+This means we can compute a matrix product by multiplying $A$ by each column of $B$ and placing the resulting vectors side by side.
