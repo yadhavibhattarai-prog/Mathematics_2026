@@ -1,7 +1,5 @@
 # Exercise 1. Dominant Terms in a Sequence
 
-## Problem
-
 Compute
 
 $$
@@ -10,96 +8,82 @@ $$
 
 Explain why the highest-degree terms determine the result.
 
----
+> **Why this exercise:** introduces the idea of a dominant term and teaches how to simplify the behavior of expressions for large arguments.
 
 ## Solution
 
-### Step 1: Factor out the highest power of $n$
+### 1. Calculation of the Limit
 
-Both numerator and denominator have degree 2, so divide each by $n^2$:
-
-$$
-\frac{4n^2-3n+1}{2n^2+5n-7}
-=\frac{n^2\left(4-\frac{3}{n}+\frac{1}{n^2}\right)}{n^2\left(2+\frac{5}{n}-\frac{7}{n^2}\right)}
-=\frac{4-\frac{3}{n}+\frac{1}{n^2}}{2+\frac{5}{n}-\frac{7}{n^2}}.
-$$
-
-### Step 2: Use the basic limits
-
-For any constant $c$ and any $k\ge 1$:
+Both the numerator and the denominator are quadratic polynomials in $n$. To determine the behavior as $n \to \infty$, factor out the highest power of $n$, which is $n^2$:
 
 $$
-\lim_{n\to\infty}\frac{c}{n^k}=0.
+\frac{4n^2-3n+1}{2n^2+5n-7} = \frac{n^2\left(4 - \frac{3}{n} + \frac{1}{n^2}\right)}{n^2\left(2 + \frac{5}{n} - \frac{7}{n^2}\right)} = \frac{4 - \frac{3}{n} + \frac{1}{n^2}}{2 + \frac{5}{n} - \frac{7}{n^2}}
 $$
 
-So
+For any real constant $c$ and any positive power $k \ge 1$:
 
 $$
-\frac{3}{n}\to 0,\quad \frac{1}{n^2}\to 0,\quad \frac{5}{n}\to 0,\quad \frac{7}{n^2}\to 0.
+\lim_{n\to\infty}\frac{c}{n^k} = 0
 $$
 
-### Step 3: Apply the limit laws
-
-Since the denominator's limit is $2\neq 0$, the quotient law applies:
+Applying this to each term in the fraction:
 
 $$
-\lim_{n\to\infty}\frac{4-\frac{3}{n}+\frac{1}{n^2}}{2+\frac{5}{n}-\frac{7}{n^2}}
-=\frac{4-0+0}{2+0-0}=\frac{4}{2}=2.
+\lim_{n\to\infty}\left(4 - \frac{3}{n} + \frac{1}{n^2}\right) = 4 - 0 + 0 = 4
 $$
 
-### Answer
+$$
+\lim_{n\to\infty}\left(2 + \frac{5}{n} - \frac{7}{n^2}\right) = 2 + 0 - 0 = 2
+$$
+
+Since the limit of the denominator is non-zero ($2 \neq 0$), apply the quotient rule for limits:
 
 $$
-\boxed{\lim_{n\to\infty}\frac{4n^2-3n+1}{2n^2+5n-7}=2}
+\lim_{n\to\infty}\frac{4n^2-3n+1}{2n^2+5n-7} = \frac{4}{2} = 2
 $$
 
 ---
 
-## Why the highest-degree terms determine the result
+### 2. Why the Highest-Degree Terms Determine the Result
 
-For large $n$, powers of $n$ grow at very different rates. The ratio of a lower-degree term to the leading term shrinks to zero:
+As $n$ grows very large, different powers of $n$ scale at vastly different rates:
 
-$$
-\frac{3n}{4n^2}=\frac{3}{4n}\to 0,
-\qquad
-\frac{1}{4n^2}\to 0.
-$$
-
-So $-3n+1$ becomes negligible compared with $4n^2$, and $5n-7$ becomes negligible compared with $2n^2$. In other words:
+- $n^2$ grows much faster than $n$, and $n$ grows much faster than a constant.
+- The ratio of any lower-degree term to the leading term $n^2$ tends to zero as $n \to \infty$:
 
 $$
-4n^2-3n+1 = 4n^2\,(1+o(1)), \qquad 2n^2+5n-7 = 2n^2\,(1+o(1)),
+\frac{-3n}{4n^2} = -\frac{3}{4n} \to 0, \qquad \frac{1}{4n^2} \to 0
 $$
 
-where $o(1)$ denotes a quantity tending to $0$. Therefore
-
 $$
-\frac{4n^2-3n+1}{2n^2+5n-7}\sim\frac{4n^2}{2n^2}=2 \quad (n\to\infty).
+\frac{5n}{2n^2} = \frac{5}{2n} \to 0, \qquad \frac{-7}{2n^2} \to 0
 $$
 
-### Numerical sanity check
+Consequently, the lower-degree terms $-3n+1$ and $5n-7$ contribute a negligibly small fraction to the total values of the numerator and denominator for large $n$. The expressions can be written in terms of asymptotic equivalence:
 
-| $n$    | $\dfrac{4n^2-3n+1}{2n^2+5n-7}$ |
-|--------|-------------------------------|
-| 10     | $\dfrac{271}{243}\approx 1.115$ |
-| 100    | $\dfrac{39701}{20493}\approx 1.937$ |
-| 1000   | $\dfrac{3997001}{2004993}\approx 1.993$ |
+$$
+4n^2 - 3n + 1 = 4n^2\left(1 - \frac{3}{4n} + \frac{1}{4n^2}\right) \sim 4n^2 \quad (n\to\infty)
+$$
 
-The values approach $2$, consistent with the result.
+$$
+2n^2 + 5n - 7 = 2n^2\left(1 + \frac{5}{2n} - \frac{7}{2n^2}\right) \sim 2n^2 \quad (n\to\infty)
+$$
+
+The ratio of the two polynomials therefore behaves asymptotically like the ratio of their leading terms alone:
+
+$$
+\frac{4n^2-3n+1}{2n^2+5n-7} \sim \frac{4n^2}{2n^2} = \frac{4}{2} = 2
+$$
 
 ---
 
-## General rule
+### 3. Numerical Verification
 
-For polynomials $P(n)$ of degree $p$ with leading coefficient $a_p$ and $Q(n)$ of degree $q$ with leading coefficient $b_q$:
+| $n$ | Numerator $4n^2-3n+1$ | Denominator $2n^2+5n-7$ | Fraction Value |
+|:---:|:---:|:---:|:---:|
+| $10$ | $371$ | $243$ | $\approx 1.5267$ |
+| $100$ | $39\,701$ | $20\,493$ | $\approx 1.9373$ |
+| $1\,000$ | $3\,997\,001$ | $2\,004\,993$ | $\approx 1.9935$ |
+| $10\,000$ | $399\,970\,001$ | $200\,049\,993$ | $\approx 1.9994$ |
 
-$$
-\lim_{n\to\infty}\frac{P(n)}{Q(n)}=
-\begin{cases}
-\dfrac{a_p}{b_q}, & p=q,\\[2mm]
-0, & p<q,\\[1mm]
-\pm\infty, & p>q.
-\end{cases}
-$$
-
-Here $p=q=2$, $a_p=4$, $b_q=2$, so the limit is $4/2=2$.
+The numerical values approach $2$ as $n$ increases, confirming the analytical limit.
