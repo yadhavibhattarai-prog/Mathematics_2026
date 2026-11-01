@@ -1,4 +1,4 @@
-# Problem 1. Derivative of a Polynomial and the Slope of a Tangent Line
+## Problem 1. Derivative of a Polynomial and the Slope of a Tangent Line
 
 For
 
