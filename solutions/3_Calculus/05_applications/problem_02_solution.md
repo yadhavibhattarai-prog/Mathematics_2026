@@ -41,22 +41,22 @@ $$
 
 ### 2. Domain
 
-Since the side lengths must be nonnegative,
+Since both side lengths must be positive,
 
 $$
-x\ge0,\qquad 20-x\ge0,
+x>0,\qquad 20-x>0,
 $$
 
 so
 
 $$
-0\le x\le20.
+0<x<20.
 $$
 
 Thus the domain is
 
 $$
-[0,20].
+(0,20).
 $$
 
 ### 3. Dimensions for maximum area
