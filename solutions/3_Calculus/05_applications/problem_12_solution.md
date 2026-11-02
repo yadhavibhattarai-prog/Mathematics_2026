@@ -163,7 +163,13 @@ y=60-1.2(26)=28.8,
 
 These values show that the area is smaller on both sides of $x=25$, confirming that $x=25$ gives the maximum area.
 
-### 9. What part was modeling and what part was calculation?
+### 9. Graph of the objective function
+
+The graph shows $A(x)=60x-1.2x^2$ for the geometric domain $0<x<50$. The hollow circles at $(0,0)$ and $(50,0)$ indicate excluded endpoints: at either endpoint, one of the room's side lengths would be zero. The vertex $(25,750)$ is the maximum.
+
+![Graph of the area function A(x) = 60x - 1.2x^2 on 0 < x < 50, with excluded endpoints and maximum marked](problem_12_area_graph.svg)
+
+### 10. What part was modeling and what part was calculation?
 
 The modeling part was:
 
