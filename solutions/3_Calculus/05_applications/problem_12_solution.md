@@ -185,4 +185,4 @@ The calculation part was:
 - checking the second derivative,
 - evaluating the area at the optimum.
 
-The graph and numerical verification are useful checks after the mathematical solution, but they do not replace the modeling and optimization reasoning.
+The graph and numerical verification are useful checks after the mathematical solution, but they do not replace the modeling and optimization reasoning
