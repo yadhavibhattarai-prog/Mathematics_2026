@@ -44,6 +44,11 @@ $$
 
 which is a horizontal line.
 
+The graph shows the line segment from $(-1,0)$ to $(1,2)$ and the horizontal
+segment from $(1,2)$ to $(3,2)$:
+
+![Graph of the piecewise function, with a line segment from (-1, 0) to (1, 2) and a horizontal segment from (1, 2) to (3, 2)](problem_14_graph.png)
+
 So,
 
 $$

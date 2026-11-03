@@ -14,17 +14,28 @@ First write the product differentiation rule and, on that basis, explain the mea
 
 ## Solution
 
-The product rule says that if
+Let \(u\) and \(v\) be differentiable functions of \(x\). By the definition
+of the derivative,
 
 $$
-u = uv,
+(uv)'(x)
+= \lim_{h\to 0}\frac{u(x+h)v(x+h)-u(x)v(x)}{h}.
 $$
 
-then
+Add and subtract \(u(x+h)v(x)\) in the numerator and factor:
 
 $$
-(uv)' = u'v + uv'.
+\begin{aligned}
+(uv)'(x)
+&= \lim_{h\to 0}\left(
+u(x+h)\frac{v(x+h)-v(x)}{h}
++ v(x)\frac{u(x+h)-u(x)}{h}
+\right) \\
+&= u(x)v'(x)+u'(x)v(x).
+\end{aligned}
 $$
+
+Thus, \((uv)'=u'v+uv'\).
 
 Rearranging,
 
