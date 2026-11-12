@@ -41,22 +41,24 @@ $$
 
 ### 2. Domain
 
-Since both side lengths must be positive,
+A geometric rectangle must have strictly positive side lengths:
 
 $$
-x>0,\qquad 20-x>0,
+x > 0, \qquad y = 20 - x > 0
 $$
 
-so
+Solving $20 - x > 0$ gives $x < 20$. Combining both inequalities:
 
 $$
-0<x<20.
+0 < x < 20
 $$
 
-Thus the domain is
+The boundary values $x = 0$ and $x = 20$ correspond to degenerate line segments (where one side has length zero and the figure ceases to be a rectangle), so they are excluded from the geometric domain.
+
+Thus, the domain is the open interval
 
 $$
-(0,20).
+(0, 20)
 $$
 
 ### 3. Dimensions for maximum area
