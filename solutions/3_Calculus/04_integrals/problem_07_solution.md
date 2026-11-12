@@ -14,87 +14,96 @@ First write the product differentiation rule and, on that basis, explain the mea
 
 ## Solution
 
-Let \(u\) and \(v\) be differentiable functions of \(x\). By the definition
-of the derivative,
+### 1. Start from the product rule
+
+If $u(x)$ and $v(x)$ are differentiable functions, then
 
 $$
-(uv)'(x)
-= \lim_{h\to 0}\frac{u(x+h)v(x+h)-u(x)v(x)}{h}.
+\frac{d}{dx}(uv) = u'v + uv'.
 $$
 
-Add and subtract \(u(x+h)v(x)\) in the numerator and factor:
+Rearrange this as
 
 $$
-\begin{aligned}
-(uv)'(x)
-&= \lim_{h\to 0}\left(
-u(x+h)\frac{v(x+h)-v(x)}{h}
-+ v(x)\frac{u(x+h)-u(x)}{h}
-\right) \\
-&= u(x)v'(x)+u'(x)v(x).
-\end{aligned}
+uv' = \frac{d}{dx}(uv) - u'v.
 $$
 
-Thus, \((uv)'=u'v+uv'\).
-
-Rearranging,
+Now integrate both sides:
 
 $$
-uv' = (uv)' - u'v.
+\int uv'\,dx = uv - \int u'v\,dx.
 $$
 
-Integrating both sides gives the integration-by-parts formula:
+This is the integration-by-parts formula:
 
 $$
 \int u\,dv = uv - \int v\,du.
 $$
 
-This is the reverse of the product rule, used when the integrand is a product of two functions where one part becomes simpler after differentiation and the other is easy to integrate.
+This is really the product rule in reverse. It is useful when the integrand is a product of two functions, and one part becomes simpler after differentiation while the other is easy to integrate.
 
-For
+### 2. Apply it to $\int x e^x\,dx$
 
-$$
-\int x e^x\,dx,
-$$
-
-choose
+Choose
 
 $$
-u = x, \quad dv = e^x\,dx.
+u = x, \qquad dv = e^x\,dx.
 $$
 
 Then
 
 $$
-du = dx, \quad v = e^x.
+du = dx, \qquad v = e^x.
 $$
 
-Apply integration by parts:
+Substitute into the integration-by-parts formula:
 
 $$
 \int x e^x\,dx = x e^x - \int e^x\,dx.
 $$
 
-Since
+Now integrate $e^x$:
 
 $$
-\int e^x\,dx = e^x + C,
+\int e^x\,dx = e^x + C.
 $$
 
-we obtain
+So
 
 $$
-\int x e^x\,dx = x e^x - e^x + C = e^x(x-1) + C.
+\int x e^x\,dx = x e^x - e^x + C.
 $$
 
-### Verification by differentiation
+Factor the common $e^x$:
+
+$$
+= e^x(x-1)+C.
+$$
+
+### 3. Verify by differentiation
 
 Differentiate the answer:
 
 $$
-\frac{d}{dx}\left(e^x(x-1)+C\right)
-= e^x(x-1) + e^x
-= x e^x.
+\frac{d}{dx}\left(e^x(x-1)+C\right).
 $$
 
-This matches the original integrand, so the result is correct.
+Using the product rule,
+
+$$
+= e^x(x-1) + e^x.
+$$
+
+Factor out $e^x$:
+
+$$
+= e^x\bigl((x-1)+1\bigr)=xe^x.
+$$
+
+This matches the original integrand exactly, so the result is correct.
+
+Therefore,
+
+$$
+\boxed{\int x e^x\,dx = e^x(x-1)+C.}
+$$

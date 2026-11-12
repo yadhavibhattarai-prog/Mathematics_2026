@@ -4,20 +4,83 @@ Compute $\int(2\sqrt{x}+3/x^2-x^{1/3})\,dx$, first rewriting powers and determin
 
 ## Solution
 
-The integrand can be written as
+First rewrite each term using exponents so the power rule can be applied directly:
 
-$$2x^{1/2}+3x^{-2}-x^{1/3}.$$
+$$
+2\sqrt{x} = 2x^{1/2}, \qquad \frac{3}{x^2}=3x^{-2}, \qquad x^{1/3}=x^{1/3}.
+$$
 
-The square root requires $x\geq0$, while the term $3/x^2$ requires $x\ne0$. Their intersection is therefore $x>0$, which is the domain of the original expression.
+So the integral becomes
 
-Applying the power rule term by term,
+$$
+\int \left(2x^{1/2}+3x^{-2}-x^{1/3}\right)dx.
+$$
 
-$$\int\left(2x^{1/2}+3x^{-2}-x^{1/3}\right)dx
-=\frac43x^{3/2}-\frac3x-\frac34x^{4/3}+C.$$
+### 1. Determine the domain
 
-On differentiating,
+The original expression contains:
+- $\sqrt{x}$, which requires $x \ge 0$
+- $\frac{3}{x^2}$, which requires $x \ne 0$
 
-$$\left(\frac43x^{3/2}-\frac3x-\frac34x^{4/3}+C\right)'
-=2x^{1/2}+3x^{-2}-x^{1/3},$$
+The intersection of these conditions is
 
-which recovers the integrand for $x>0$.
+$$x>0.
+$$
+
+So the original integrand is defined on $x>0$.
+
+### 2. Integrate term by term
+
+Apply the power rule $\int x^n dx = \frac{x^{n+1}}{n+1}+C$ for each term:
+
+$$
+\int 2x^{1/2}dx = 2\cdot \frac{x^{3/2}}{3/2} = \frac{4}{3}x^{3/2},
+$$
+
+$$
+\int 3x^{-2}dx = 3\cdot \frac{x^{-1}}{-1} = -\frac{3}{x},
+$$
+
+$$
+\int -x^{1/3}dx = -\frac{x^{4/3}}{4/3} = -\frac{3}{4}x^{4/3}.
+$$
+
+Therefore,
+
+$$
+\int \left(2\sqrt{x}+\frac{3}{x^2}-x^{1/3}\right)dx
+= \frac{4}{3}x^{3/2}-\frac{3}{x}-\frac{3}{4}x^{4/3}+C.
+$$
+
+### 3. Verify by differentiation
+
+Differentiate the result:
+
+$$
+\frac{d}{dx}\left(\frac{4}{3}x^{3/2}-\frac{3}{x}-\frac{3}{4}x^{4/3}+C\right).
+$$
+
+Using the derivative rules,
+
+$$
+\frac{d}{dx}\left(\frac{4}{3}x^{3/2}\right)=2x^{1/2},
+$$
+
+$$
+\frac{d}{dx}\left(-\frac{3}{x}\right)=\frac{3}{x^2}=3x^{-2},
+$$
+
+$$
+\frac{d}{dx}\left(-\frac{3}{4}x^{4/3}\right)=-x^{1/3}.
+$$
+
+Adding them gives
+
+$$
+2x^{1/2}+3x^{-2}-x^{1/3}
+=2\sqrt{x}+\frac{3}{x^2}-x^{1/3},
+$$
+
+which matches the original integrand for $x>0$.
+
+So the antiderivative is correct.
